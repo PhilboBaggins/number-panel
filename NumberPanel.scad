@@ -1,4 +1,5 @@
 
+// TODO: Use font that will laser cut without the middle falling out of the 0, 4, 6, 8 & 9 digits
 DEFAULT_FONT = "Helvetica";
 
 DEBUG_TEXT = false;
