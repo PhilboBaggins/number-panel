@@ -11,7 +11,7 @@ module centeredText(text, area, resizeTextHeight, font)
 
     translate([(length / -2), 0])
     resize([length, resizeTextHeight ? height : 0], auto = true)
-    text(text, font, valign = "center");
+    text(text, font=font, valign = "center");
 }
 
 module NumberPanel(size, numX, numY, font, debugText)
