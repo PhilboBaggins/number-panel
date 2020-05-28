@@ -4,15 +4,7 @@ DEFAULT_FONT = "Helvetica";
 
 DEBUG_TEXT = false;
 
-module centeredText(text, area, resizeTextHeight, font)
-{
-    length = area[0];
-    height = area[1];
-
-    translate([(length / -2), 0])
-    resize([length, resizeTextHeight ? height : 0], auto = true)
-    text(text, font=font, valign = "center");
-}
+use <openscad-common/CenteredText.scad>
 
 module NumberPanel(size, numX, numY, font, debugText)
 {
@@ -31,7 +23,7 @@ module NumberPanel(size, numX, numY, font, debugText)
             text = DEBUG_TEXT ? str(xIdx, ", ", yIdx) : str(round(rands(10000, 99999, 1)[0]));
             area = [spacingX*0.8, spacingY*0.8];
 
-            translate([x, y]) centeredText(text, area, false, font);
+            translate([x, y]) CenteredText(text, area, false, font);
         }
     }
 }
